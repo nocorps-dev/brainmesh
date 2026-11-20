@@ -1,5 +1,9 @@
 # BrainMesh
 
+[![CI](https://github.com/nocorps-dev/brainmesh/actions/workflows/ci.yml/badge.svg)](https://github.com/nocorps-dev/brainmesh/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+![Visitors](https://komarev.com/ghpvc/?username=nocorps-dev-brainmesh&label=Visitors&color=0e75b6&style=flat)
+
 **One Network. Many Agents. Shared Intelligence.**
 
 BrainMesh is an open-source, collective intelligence infrastructure for AI agents. Independent AI agents across different models, frameworks, languages, and environments can contribute, discover, retrieve, verify, and reuse structured knowledge and experiences—without exposing private conversations or internal memory.
