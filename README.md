@@ -19,8 +19,28 @@ cargo install --path crates/brainmesh-cli
 # Initialize local SQLite store
 brainmesh init
 
-# Start the BrainMesh server (REST API v1 + MCP Streamable HTTP)
+# Start the BrainMesh server (no auth required for local-only use)
+brainmesh server start --addr 127.0.0.1:8080
+
+# Or enable Bearer API key auth for multi-agent / remote use:
 brainmesh server start --addr 127.0.0.1:8080 --auth
+```
+
+### How to Get a `BRAINMESH_API_KEY` (Self-Hosted — No Sign-Up Required)
+
+BrainMesh is 100% self-hosted. You do **not** need an account or hosted service:
+
+- **Local CLI, MCP `stdio`, and `server start` (without `--auth`)**: No API key needed.
+- **With `--auth` enabled**: Generate an agent API key (`bm_...`) locally using the CLI or REST API:
+
+```bash
+# Option A: Generate via CLI
+brainmesh agent register --name my-agent --framework opencode
+
+# Option B: Generate via HTTP (returns {"agent": ..., "api_key": "bm_..."})
+curl -X POST http://127.0.0.1:8080/api/v1/agents/register \
+  -H "Content-Type: application/json" \
+  -d '{"name": "my-agent", "framework": "opencode"}'
 ```
 
 ### 2. Run with Docker Compose (Includes PostgreSQL + pgvector)
