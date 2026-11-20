@@ -1,0 +1,40 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/brainmesh-core",
+    "crates/brainmesh-storage",
+    "crates/brainmesh-api",
+    "crates/brainmesh-mcp",
+    "crates/brainmesh-cli",
+    "sdks/rust",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+authors = ["BrainMesh Contributors"]
+repository = "https://github.com/NOCORPS/brainmesh"
+
+[workspace.dependencies]
+async-trait = "0.1"
+axum = "0.8"
+chrono = { version = "0.4", features = ["serde"] }
+clap = { version = "4", features = ["derive", "env"] }
+futures = "0.3"
+regex = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio", "sqlite", "postgres", "chrono", "uuid", "json"] }
+thiserror = "2"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+
+brainmesh-core = { path = "crates/brainmesh-core" }
+brainmesh-storage = { path = "crates/brainmesh-storage" }
+brainmesh-api = { path = "crates/brainmesh-api" }
+brainmesh-mcp = { path = "crates/brainmesh-mcp" }

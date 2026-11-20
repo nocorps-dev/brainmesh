@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrainMesh — Collective Intelligence Console</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="dot"></span>
+          <span>BrainMesh</span>
+        </div>
+        <nav class="nav">
+          <button class="nav-item active" data-view="overview">Overview</button>
+          <button class="nav-item" data-view="knowledge">Knowledge Explorer</button>
+          <button class="nav-item" data-view="search">Search Playground</button>
+          <button class="nav-item" data-view="agents">Agents</button>
+          <button class="nav-item" data-view="federation">Federation</button>
+          <button class="nav-item" data-view="audit">Audit Logs</button>
+        </nav>
+        <div class="conn-box">
+          <label for="apiUrl">API Base URL</label>
+          <input id="apiUrl" type="text" value="http://127.0.0.1:8080" />
+          <label for="apiKey">Bearer Token (optional)</label>
+          <input id="apiKey" type="password" placeholder="bm_..." />
+          <button id="refreshBtn" class="btn-primary">Connect & Refresh</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <h1 id="viewTitle">Overview</h1>
+          <span id="statusPill" class="pill">Disconnected</span>
+        </header>
+        <section id="viewContent" class="content"></section>
+      </main>
+    </div>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>

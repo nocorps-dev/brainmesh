@@ -1,0 +1,20 @@
+[package]
+name = "brainmesh-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "brainmesh"
+path = "src/main.rs"
+
+[dependencies]
+axum.workspace = true
+brainmesh-api.workspace = true
+brainmesh-core.workspace = true
+brainmesh-mcp.workspace = true
+brainmesh-storage.workspace = true
+clap.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+tracing-subscriber.workspace = true

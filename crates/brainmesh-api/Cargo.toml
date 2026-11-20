@@ -1,0 +1,19 @@
+[package]
+name = "brainmesh-api"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+axum.workspace = true
+brainmesh-core.workspace = true
+brainmesh-mcp.workspace = true
+brainmesh-storage.workspace = true
+reqwest.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+
+[dev-dependencies]
+brainmesh-sdk = { path = "../../sdks/rust" }
+reqwest.workspace = true
